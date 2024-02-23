@@ -1,4 +1,4 @@
-from .serializers import FreelancerSignUpSerializer,ClientSignUpSerializer
+from .serializers import UserSerializer,FreelancerSignUpSerializer,ClientSignUpSerializer
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
