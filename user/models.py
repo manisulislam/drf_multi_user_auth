@@ -24,10 +24,10 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
 
 class Freelancer(models.Model):
     user=models.OneToOneField(User,related_name='freelancer',on_delete=models.CASCADE)
-    phone=models.CharField(max_length=20)
-    skills=models.CharField(max_length=200)
-    description=models.TextField()
-    portfolio=models.CharField(max_length=200)
+    phone=models.CharField(max_length=20,null=True,blank=True)
+    skills=models.CharField(max_length=200,null=True,blank=True)
+    description=models.TextField(null=True,blank=True)
+    portfolio=models.CharField(max_length=200,null=True,blank=True)
 
 
     def __str__(self):
@@ -35,8 +35,8 @@ class Freelancer(models.Model):
 
 class Client(models.Model):
     user=models.OneToOneField(User, related_name='employer', on_delete=models.CASCADE)
-    company_name=models.CharField(max_length=200)
-    description=models.TextField()
+    company_name=models.CharField(max_length=200,null=True,blank=True)
+    description=models.TextField(null=True,blank=True)
 
     def __str__(self):
         return self.company_name
